@@ -102,7 +102,7 @@ Format the response professionally using headings, tables, and bullet points. :
 
     try:
         response = client.models.generate_content(
-            model="gemini-2.5-pro",
+            model="gemini-2.5-flash",
             contents=prompt
         )
         st.write(response.text)
