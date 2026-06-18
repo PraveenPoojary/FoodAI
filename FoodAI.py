@@ -100,9 +100,13 @@ Provide:
 Format the response professionally using headings, tables, and bullet points. :
     """
 
-    response = client.models.generate_content(
-        model="gemini-2.5-flash",
-        contents=prompt
-    )
+    try:
+        response = client.models.generate_content(
+            model="gemini-2.5-pro",
+            contents=prompt
+        )
+        st.write(response.text)
 
-    st.write(response.text)
+    except Exception as e:
+        st.error("Something went wrong. Please try again later.")
+        st.write(f"Error: {e}")  # Remove in production
